@@ -5,44 +5,30 @@ const execSync = require('child_process').execSync;
 try {
   // check it CycloneDX is installed
   try {
-    execSync('dotnet CycloneDX --help');
+    execSync('cyclonedx-py -h');
   } catch (error) {
     console.log('Installing CycloneDX...');
-    let output = execSync('dotnet tool install --global CycloneDX', { encoding: 'utf-8' });
-    console.log(output);
+    let consoleOutput = execSync('pip3 install cyclonedx-bom', { encoding: 'utf-8' });
+    console.log(consoleOutput);
   }
 
-  const path = core.getInput('path');
-  const out = core.getInput('out');
-  const json = core.getInput('json') != 'false';
-  const githubBearerToken = core.getInput('github-bearer-token');
+  const input = core.getInput('input');
+  const output = core.getInput('output');
 
   console.log('Options:');
-  console.log(`  path: ${path}`);
-  console.log(`  out: ${out}`);
-  console.log(`  json: ${json}`);
+  console.log(`  i: ${input}`);
+  console.log(`  o: ${output}`);
 
-  let command = `dotnet CycloneDX ${path} --out ${out}`
-  if (json) command += ' --json';
+  let command = `cyclonedx-py -i ${input} -o ${output}`
 
   console.log(`Running: ${command}`);
 
-  if (githubBearerToken != '') {
-    console.log('With GitHub bearer token');
-    command += ' --github-bearer-token ' + githubBearerToken;
-  }
-
-  output = execSync(command, { encoding: 'utf-8' });
-  console.log(output);
+  consoleOutput = execSync(command, { encoding: 'utf-8' });
+  console.log(consoleOutput);
 
   console.log('BOM Contents:');
-  if (json) {
-    let bomContents = fs.readFileSync(`${out}/bom.json`).toString('utf8');
-    console.log(bomContents);
-  } else {
-    let bomContents = fs.readFileSync(`${out}/bom.xml`).toString('utf8');
-    console.log(bomContents);
-  }
+  let bomContents = fs.readFileSync(`${output}`).toString('utf8');
+  console.log(bomContents);
 } catch (error) {
   core.setFailed(error.message);
 }

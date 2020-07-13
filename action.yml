@@ -1,21 +1,14 @@
-name: 'CycloneDX .NET Generate BOM'
+name: 'CycloneDX Python Generate BOM'
 author: Patrick Dwyer
-description: 'Github action to generate a CycloneDX BOM for .NET projects'
+description: 'Github action to generate a CycloneDX BOM for Python projects'
 inputs:
-  path:
-    description: 'The path to a .sln, .csproj, .vbproj, or packages.config file or the path to a directory which will be recursively analyzed for packages.config files'
-    required: true
-  out:
-    description: 'Output directory'
-    default: ./
+  input:
+    description: 'The path to a pip requirements file'
+    default: ./requirements.txt
     required: false
-  json:
-    description: 'Produce a JSON BOM instead of XML, set to any value instead of false'
-    default: 'false'
-    required: false
-  github-bearer-token:
-    description: 'Optionally provide the GitHub action bearer token for license resolution.'
-    default: ''
+  output:
+    description: 'Output filename'
+    default: ./bom.xml
     required: false
 runs:
   using: 'node12'
