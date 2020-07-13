@@ -1,4 +1,4 @@
-name: 'CycloneDX Python Generate BOM'
+name: 'CycloneDX Python Generate SBOM'
 author: Patrick Dwyer
 description: 'Github action to generate a CycloneDX BOM for Python projects'
 inputs:
