@@ -22,5 +22,5 @@ Be sure to quote paths with spaces.
 ## Example usage
 
 ```
-uses: CycloneDX/cyclonedx-python-generatebom@master
+uses: CycloneDX/cyclonedx-python-generate-sbom@master
 ```
