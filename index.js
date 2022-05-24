@@ -36,7 +36,7 @@ try {
   console.log(`  i: ${input}`);
   console.log(`  o: ${output}`);
 
-  let command = `cyclonedx-py -i ${input} -o ${output}`
+  let command = `cyclonedx-py -r -o ${output}`
 
   console.log(`Running: ${command}`);
 
