@@ -31,12 +31,14 @@ try {
 
   const input = core.getInput('input');
   const output = core.getInput('output');
+  const format = core.getInput('format');
 
   console.log('Options:');
-  console.log(`  i: ${input}`);
-  console.log(`  o: ${output}`);
+  console.log(`  input:  ${input}`);
+  console.log(`  output: ${output}`);
+  console.log(`  format: ${format}`);
 
-  let command = `cyclonedx-py -r -o ${output}`
+  let command = `cyclonedx-py -r -i ${input} --format ${format} -o ${output}`
 
   console.log(`Running: ${command}`);
 

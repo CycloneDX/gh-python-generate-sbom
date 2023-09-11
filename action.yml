@@ -10,6 +10,10 @@ inputs:
     description: 'Output filename'
     default: ./bom.xml
     required: false
+  format:
+    description: 'Output format'
+    default: xml
+    required: false
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'index.js'
