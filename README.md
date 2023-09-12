@@ -7,31 +7,20 @@
 
 ## Inputs
 
-### `input`
+### `i`
 
 The path to a pip requirements file, default is "./requirements.txt"
 
 Be sure to quote paths with spaces.
 
-### `output`
+### `o`
 
 Output filename, default is "./bom.xml"
 
 Be sure to quote paths with spaces.
 
-### `format`
-
-Output format, default is `xml`.
-
-Acceptable values are `xml` or `json`.
-
 ## Example usage
 
 ```
-- name: Generate Python SBOM
-  uses: CycloneDX/gh-python-generate-sbom@v1
-    with:
-      input: ./requirements.txt
-      output: ./bom.json
-      format: json
+uses: CycloneDX/gh-python-generate-sbom@v1
 ```
