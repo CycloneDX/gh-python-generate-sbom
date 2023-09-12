@@ -19,19 +19,12 @@ Output filename, default is "./bom.xml"
 
 Be sure to quote paths with spaces.
 
-### `format`
-
-Output format, default is `xml`.
-
-Acceptable values are `xml` or `json`.
-
 ## Example usage
 
 ```
 - name: Generate Python SBOM
   uses: CycloneDX/gh-python-generate-sbom@v1
-    with:
-      input: ./requirements.txt
-      output: ./bom.json
-      format: json
+  with:
+    input: ./requirements.txt
+    output: ./bom.json
 ```
