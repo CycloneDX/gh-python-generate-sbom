@@ -20,26 +20,26 @@ const core = require('@actions/core');
 const execSync = require('child_process').execSync;
 
 try {
-  // check it CycloneDX is installed
+  // check if CycloneDX is installed
   try {
     execSync('cyclonedx-py -h');
   } catch (error) {
     console.log('Installing CycloneDX...');
-    let consoleOutput = execSync("pip3 install 'cyclonedx-bom<4'", { encoding: 'utf-8' });
+    let consoleOutput = execSync("pip3 install 'cyclonedx-bom>=1.4.0,<4'", { encoding: 'utf-8' });
     console.log(consoleOutput);
   }
 
   const input = core.getInput('input');
   const output = core.getInput('output');
+  const format = core.getInput('format');
 
   console.log('Options:');
-  console.log(`  i: ${input}`);
-  console.log(`  o: ${output}`);
+  console.log(`  input:  ${input}`);
+  console.log(`  output: ${output}`);
+  console.log(`  format: ${format}`);
 
-  let command = `cyclonedx-py -r -o ${output}`
-
+  let command = `cyclonedx-py -r -i ${input} --format ${format} -o ${output}`
   console.log(`Running: ${command}`);
-
   consoleOutput = execSync(command, { encoding: 'utf-8' });
   console.log(consoleOutput);
 
