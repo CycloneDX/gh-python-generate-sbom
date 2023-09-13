@@ -25,7 +25,7 @@ try {
     execSync('cyclonedx-py -h');
   } catch (error) {
     console.log('Installing CycloneDX...');
-    let consoleOutput = execSync('pip3 install cyclonedx-bom>=1.4.0,<=3.11.2', { encoding: 'utf-8' });
+    let consoleOutput = execSync("pip3 install 'cyclonedx-bom>=1.4.0,<4'", { encoding: 'utf-8' });
     console.log(consoleOutput);
   }
 
@@ -39,9 +39,7 @@ try {
   console.log(`  format: ${format}`);
 
   let command = `cyclonedx-py -r -i ${input} --format ${format} -o ${output}`
-
   console.log(`Running: ${command}`);
-
   consoleOutput = execSync(command, { encoding: 'utf-8' });
   console.log(consoleOutput);
 
