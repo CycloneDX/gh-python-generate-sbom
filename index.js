@@ -39,9 +39,7 @@ try {
   console.log(`  format: ${format}`);
 
   let command = `cyclonedx-py -r -i ${input} --format ${format} -o ${output}`
-
   console.log(`Running: ${command}`);
-
   consoleOutput = execSync(command, { encoding: 'utf-8' });
   console.log(consoleOutput);
 
