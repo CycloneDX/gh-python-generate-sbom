@@ -33,3 +33,10 @@ Output format, one of "json"/"xml", default is "xml"
     output: ./bom.json
     format: json
 ```
+
+----
+
+## Internals
+
+This GitHub ation depends on `cyclonedx-bom>=1.4.0,<4`. 
+See [`cyclonedx-bom` on PyPI](https://pypi.org/project/cyclonedx-bom/).
