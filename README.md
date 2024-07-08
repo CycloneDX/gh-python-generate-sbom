@@ -1,9 +1,25 @@
+>
+> This GitHub Action is considdered deprecated.  
+> Instead, you may use one the following tool in your github workflow:
+>
+>  [`cyclonedx-bom`](https://pypi.org/project/cyclonedx-bom/)
+>   ```yaml
+>   - run: python -m pip install 'cyclonedx-bom>=4,<5'
+>   - name: Create SBOM step
+>     # see for usage: https://pypi.org/project/cyclonedx-bom/
+>     run: python -m cyclonedx_py # your options here
+>   ```
+> 
+
+----
+
+# GitHub action to generate a CycloneDX SBOM for Python
+
 [![Website](https://img.shields.io/badge/https://-cyclonedx.org-blue.svg)](https://cyclonedx.org/)
 [![Slack Invite](https://img.shields.io/badge/Slack-Join-blue?logo=slack&labelColor=393939)](https://cyclonedx.org/slack/invite)
 [![Group Discussion](https://img.shields.io/badge/discussion-groups.io-blue.svg)](https://groups.io/g/CycloneDX)
 [![Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&label=Follow)](https://twitter.com/CycloneDX_Spec)
 
-# GitHub action to generate a CycloneDX SBOM for Python
 
 ## Inputs
 
