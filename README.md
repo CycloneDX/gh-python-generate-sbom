@@ -1,6 +1,6 @@
 > [!NOTE]
 > This GitHub Action is considered deprecated.  
-> Instead, you may use the underlying tool directly: [`cyclonedx-bom`](https://pypi.org/project/cyclonedx-bom/)
+> Instead, you may use the underlying tool directly:
 > ```yaml      
 > - name: Install SBOM tool
 >   run: pipx install cyclonedx-bom
