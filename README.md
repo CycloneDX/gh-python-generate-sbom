@@ -11,8 +11,6 @@
 
 ----
 
-----
-
 # GitHub action to generate a CycloneDX SBOM for Python
 
 [![Website](https://img.shields.io/badge/https://-cyclonedx.org-blue.svg)](https://cyclonedx.org/)
