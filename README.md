@@ -1,15 +1,15 @@
->
+> [!NOTE]
 > This GitHub Action is considered deprecated.  
-> Instead, you may use one the following tool in your github workflow:
->
->  [`cyclonedx-bom`](https://pypi.org/project/cyclonedx-bom/)
->   ```yaml
->   - run: python -m pip install 'cyclonedx-bom>=4,<5'
->   - name: Create SBOM step
->     # see for usage: https://pypi.org/project/cyclonedx-bom/
->     run: python -m cyclonedx_py # your options here
->   ```
-> 
+> Instead, you may use the underlying tool directly: [`cyclonedx-bom`](https://pypi.org/project/cyclonedx-bom/)
+> ```yaml      
+> - name: Install SBOM tool
+>   run: pipx install cyclonedx-bom
+> - name: Create SBOM step
+>   # see for usage: https://pypi.org/project/cyclonedx-bom/
+>   run: cyclonedx-py --help
+> ```
+
+----
 
 ----
 
